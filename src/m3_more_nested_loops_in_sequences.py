@@ -4,8 +4,8 @@ in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Jared Brown.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -18,7 +18,7 @@ def main():
 def run_test_largest_number():
     """ Tests the    largest_number    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  largest_number  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # -------------------------------------------------------------------------
@@ -44,7 +44,14 @@ def run_test_largest_number():
     answer = largest_number(([], [], []))
     print('Expected and actual are:', expected, answer)
 
-    # TODO 2 (continued): Add your ADDITIONAL test(s) here:
+    # DONE 2 (continued): Add your ADDITIONAL test(s) here:
+
+    # Test 4:
+    expected = 4
+    answer = largest_number([(4, 4, 4),
+                             (4, 4, 4, 4, 4),
+                             [4, 4, 4, 4]])
+    print('Expected and actual are:', expected, answer)
 
 
 def largest_number(seq_seq):
@@ -76,6 +83,15 @@ def largest_number(seq_seq):
     # TODO: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+
+    for i in range(len(seq_seq)):
+        for k in range(len(seq_seq[i])):
+            sequence=seq_seq[i]
+            if(sequence[k]==None and type(biggest)!=int):
+                biggest=None
+            else:
+                if (sequence[k]>biggest):
+                biggest=sequence[k]
 
 
 def run_test_largest_negative_number():
