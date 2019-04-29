@@ -10,7 +10,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 def main():
     """ Calls the other functions to test them. """
-    #run_test_largest_number()
+    run_test_largest_number()
     run_test_largest_negative_number()
     #run_test_first_is_elsewhere_too()
 
@@ -87,16 +87,12 @@ def largest_number(seq_seq):
     answer=None
     for i in range(len(seq_seq)):
         for k in range(len(seq_seq[i])):
-            answer=i
-            y=k
-    for l in range(len(seq_seq)):
-        for o in range(len(seq_seq[l])):
-            answer=l
-            y=o
-    if answer==None:
-        return None
-    return seq_seq[answer][y]
-
+            sequence=seq_seq[i]
+            if(type(sequence[k])==int and answer==None):
+                answer=sequence[k]
+            if(answer!=None and sequence[k]>answer):
+                answer=sequence[k]
+    return answer
 
 
 def run_test_largest_negative_number():
@@ -159,6 +155,15 @@ def largest_negative_number(seq_seq):
     #   being constructed (so the SPACE allowed is limited to the
     #   give sequence of sequences plus any non-list variables you want).
     # -------------------------------------------------------------------------
+    largest=None
+    for k in range(len(seq_seq)):
+        sequence=seq_seq[k]
+        for j in range(len(sequence)):
+            if(largest==None and sequence(j)<0):
+                largest=sequence(j)
+            if(largest!=None and sequence(j)>largest):
+                largest=sequence(j)
+    return None
 
 
 
