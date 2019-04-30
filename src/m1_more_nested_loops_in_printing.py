@@ -183,14 +183,22 @@ def vee(r):
     #   defeat the goal of providing practice at loops within loops.
     # -------------------------------------------------------------------------
 
-    for i in range (r,0,-1):
-        for k in range(0,r,1):
+    #for i in range (r,0,-1):
+    #    for k in range(0,i,1):
+    #        print(k+1, end='')
+    #    print('-',end='')
+    #    for j in range(r,0,-1):
+    #        print(j,end='')
+    #    print()
+    for i in range (r):
+        for j in range(i):
+            print(' ', end='')
+        for k in range(0,r-i,1):
             print(k+1, end='')
         print('-',end='')
-        for j in range(r,0,-1):
-            print(j,end='')
+        for p in range(r-i,0,-1):
+            print(p,end='')
         print()
-
 
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
@@ -374,6 +382,32 @@ def numbers_increasing_forward(r, maxnum):
         if (total >= r-1):
             break
         total += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
